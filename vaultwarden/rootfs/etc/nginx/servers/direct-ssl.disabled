@@ -12,5 +12,25 @@ server {
     location / {
         proxy_pass http://backend;
     }
+}
 
+server {
+    listen 7278 ssl;
+    listen [::]:7278 ssl;
+
+    include /etc/nginx/includes/server_params.conf;
+    include /etc/nginx/includes/ssl_params.conf;
+    include /etc/nginx/includes/proxy_params.conf;
+
+    ssl_certificate /ssl/%%certfile%%;
+    ssl_certificate_key /ssl/%%keyfile%%;
+
+    location /admin {
+        deny all;
+        return 403;
+    }
+
+    location / {
+        proxy_pass http://backend;
+    }
 }

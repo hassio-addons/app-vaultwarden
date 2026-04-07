@@ -10,3 +10,22 @@ server {
     }
 
 }
+
+server {
+server {
+    listen 7278 default_server;
+    listen [::]:7278 default_server;
+
+    include /etc/nginx/includes/server_params.conf;
+    include /etc/nginx/includes/proxy_params.conf;
+
+    location /admin {
+        deny all;
+        return 403;
+    }
+
+    location / {
+        proxy_pass http://backend;
+    }
+
+}
