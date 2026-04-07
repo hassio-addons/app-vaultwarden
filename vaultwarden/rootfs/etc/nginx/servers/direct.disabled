@@ -12,7 +12,6 @@ server {
 }
 
 server {
-server {
     listen 7278 default_server;
     listen [::]:7278 default_server;
 
