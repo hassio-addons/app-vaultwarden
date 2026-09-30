@@ -16,6 +16,8 @@ Open source password management solution.
 
 ## About
 
+Vaultwarden is a server implementation of the Bitwarden Client API, written in Rust and compatible with official Bitwarden clients.
+
 Bitwarden is an open-source password manager that can store sensitive
 information such as website credentials in an encrypted vault.
 
